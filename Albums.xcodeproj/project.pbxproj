@@ -12,6 +12,9 @@
 		4C0FECE0273F9CDE00A0146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0FECDF273F9CDE00A0146F /* Assets.xcassets */; };
 		4C0FECE3273F9CDE00A0146F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0FECE2273F9CDE00A0146F /* Preview Assets.xcassets */; };
 		4C0FECED273F9CDF00A0146F /* AlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FECEC273F9CDF00A0146F /* AlbumsTests.swift */; };
+		4C6CF669273FCCC100B82A1C /* NetworkDataHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CF668273FCCC100B82A1C /* NetworkDataHandlerTests.swift */; };
+		4C6CF66C273FCE4800B82A1C /* NetworkDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */; };
+		4C6CF66D273FCF4F00B82A1C /* NetworkDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 		4C0FECEC273F9CDF00A0146F /* AlbumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTests.swift; sourceTree = "<group>"; };
 		4C0FECF6273F9CDF00A0146F /* AlbumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsUITests.swift; sourceTree = "<group>"; };
 		4C0FECF8273F9CDF00A0146F /* AlbumsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4C6CF668273FCCC100B82A1C /* NetworkDataHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataHandlerTests.swift; sourceTree = "<group>"; };
+		4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +81,7 @@
 		4C0FECDA273F9CDD00A0146F /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				4C6CF66A273FCE3700B82A1C /* Network */,
 				4C0FECDB273F9CDD00A0146F /* AlbumsApp.swift */,
 				4C0FECDD273F9CDD00A0146F /* ContentView.swift */,
 				4C0FECDF273F9CDE00A0146F /* Assets.xcassets */,
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0FECEC273F9CDF00A0146F /* AlbumsTests.swift */,
+				4C6CF668273FCCC100B82A1C /* NetworkDataHandlerTests.swift */,
 			);
 			path = AlbumsTests;
 			sourceTree = "<group>";
@@ -107,6 +114,14 @@
 				4C0FECF8273F9CDF00A0146F /* AlbumsUITestsLaunchTests.swift */,
 			);
 			path = AlbumsUITests;
+			sourceTree = "<group>";
+		};
+		4C6CF66A273FCE3700B82A1C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +226,7 @@
 			files = (
 				4C0FECDE273F9CDD00A0146F /* ContentView.swift in Sources */,
 				4C0FECDC273F9CDD00A0146F /* AlbumsApp.swift in Sources */,
+				4C6CF66C273FCE4800B82A1C /* NetworkDataHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +235,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0FECED273F9CDF00A0146F /* AlbumsTests.swift in Sources */,
+				4C6CF669273FCCC100B82A1C /* NetworkDataHandlerTests.swift in Sources */,
+				4C6CF66D273FCF4F00B82A1C /* NetworkDataHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
