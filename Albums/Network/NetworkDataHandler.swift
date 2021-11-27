@@ -11,6 +11,7 @@ struct NetworkDataHandler {
 
 }
 
+// MARK: - Enums, Vars and init
 extension NetworkDataHandler {
     struct Error: Swift.Error {
         enum Code {
@@ -28,7 +29,10 @@ extension NetworkDataHandler {
             self.underlying = underlying
         }
     }
+}
 
+// MARK: - Functions
+extension NetworkDataHandler {
     static func data(
         with data: Data,
         response: URLResponse
