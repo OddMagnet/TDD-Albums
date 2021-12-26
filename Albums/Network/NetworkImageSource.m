@@ -30,4 +30,10 @@
     return  CGImageSourceCreateImageAtIndex;
 }
 
++ (CGImageRef)createImageWithImageSource:(CGImageSourceRef)imageSource
+                                 atIndex:(size_t)index
+                                 options:(CFDictionaryRef)options {
+    return [self createImage](imageSource, index, options);
+}
+
 @end
