@@ -9,6 +9,18 @@
 
 #import "NetworkImageSource.h"
 
+static CGImageSourceRef _Nullable NetworkImageSourceTestDoubleCreateImageSource(CFDataRef _Nonnull, CFDictionaryRef _Nullable) CF_RETURNS_RETAINED;
+
+static id NetworkImageSourceTestDoubleCreateImageSourceParameterData = 0;
+static id NetworkImageSourceTestDoubleCreateImageSourceParameterOptions = 0;
+static id NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource = 0;
+
+CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, CFDictionaryRef options) {
+    NetworkImageSourceTestDoubleCreateImageSourceParameterData = (__bridge id)data;
+    NetworkImageSourceTestDoubleCreateImageSourceParameterOptions = (__bridge id)options;
+    return (__bridge_retained CGImageSourceRef)NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource;
+}
+
 @interface NetworkImageSourceTestCase : XCTestCase
 
 @end
