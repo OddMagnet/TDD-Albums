@@ -16,6 +16,9 @@
 
 + (CGImageSourceRef _Nullable (*_Nonnull)(CFDataRef _Nonnull, CFDictionaryRef _Nullable))createImageSource;
 
++ (CGImageSourceRef _Nullable)createImageSourceWithData:(CFDataRef _Nonnull)data
+                                                options:(CFDictionaryRef _Nullable)options CF_RETURNS_RETAINED;
+
 @end
 
 @interface NetworkImageSource (CreateImage)
