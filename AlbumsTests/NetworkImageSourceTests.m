@@ -49,6 +49,16 @@ CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, C
 
 @end
 
+@implementation NetworkImageSourceTestCase (TearDown)
+
+- (void)tearDown {
+    NetworkImageSourceTestDoubleCreateImageSourceParameterData = 0;
+    NetworkImageSourceTestDoubleCreateImageSourceParameterOptions = 0;
+    NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource = 0;
+}
+
+@end
+
 @implementation NetworkImageSourceTestCase (CreateImageSource)
 
 - (void)testCreateImageSource {
