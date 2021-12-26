@@ -9,6 +9,7 @@
 
 #import "NetworkImageSource.h"
 
+// MARK: - Test-doubles
 static CGImageSourceRef _Nullable NetworkImageSourceTestDoubleCreateImageSource(CFDataRef _Nonnull, CFDictionaryRef _Nullable) CF_RETURNS_RETAINED;
 
 static id NetworkImageSourceTestDoubleCreateImageSourceParameterData = 0;
@@ -21,6 +22,25 @@ CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, C
     return (__bridge_retained CGImageSourceRef)NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource;
 }
 
+@interface NetworkImageSourceTestDouble : NetworkImageSource
+
+@end
+
+@implementation NetworkImageSourceTestDouble
+
+@end
+
+@implementation NetworkImageSourceTestDouble (CreateImageSource)
+
++ (CGImageSourceRef _Nullable (*_Nonnull)(CFDataRef _Nonnull, CFDictionaryRef _Nullable))createImageSource {
+    return NetworkImageSourceTestDoubleCreateImageSource;
+}
+
+@end
+
+
+
+// MARK: Test cases
 @interface NetworkImageSourceTestCase : XCTestCase
 
 @end
