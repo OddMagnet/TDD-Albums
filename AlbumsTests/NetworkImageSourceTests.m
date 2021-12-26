@@ -40,7 +40,7 @@ CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, C
 
 
 
-// MARK: Test cases
+// MARK: (normal) Test cases
 @interface NetworkImageSourceTestCase : XCTestCase
 
 @end
@@ -71,6 +71,28 @@ CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, C
 
 - (void)testCreateImage {
     XCTAssert([NetworkImageSource createImage] == CGImageSourceCreateImageAtIndex);
+}
+
+@end
+
+
+
+//MARK: (test-double) Test cases
+@implementation NetworkImageSourceTestCase (CreateImageSourceTestDouble)
+
+- (void)testCreateImageSourceTestDouble {
+    NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource = [[NSObject alloc] init];
+
+    id data = [[NSObject alloc] init];
+    id options = [[NSObject alloc] init];
+
+    id imageSource = (__bridge_transfer id)[NetworkImageSourceTestDouble createImageSourceWithData:(__bridge CFDataRef)data
+                                                                                           options:(__bridge CFDictionaryRef)options];
+
+    XCTAssert(NetworkImageSourceTestDoubleCreateImageSourceParameterData == data);
+    XCTAssert(NetworkImageSourceTestDoubleCreateImageSourceParameterOptions == options);
+
+    XCTAssert(imageSource == NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource);
 }
 
 @end
