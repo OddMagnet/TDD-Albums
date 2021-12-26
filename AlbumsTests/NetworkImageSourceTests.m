@@ -10,6 +10,7 @@
 #import "NetworkImageSource.h"
 
 // MARK: - Test-doubles
+// MARK: CreateImageSource
 static CGImageSourceRef _Nullable NetworkImageSourceTestDoubleCreateImageSource(CFDataRef _Nonnull, CFDictionaryRef _Nullable) CF_RETURNS_RETAINED;
 
 static id NetworkImageSourceTestDoubleCreateImageSourceParameterData = 0;
@@ -22,6 +23,24 @@ CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, C
     return (__bridge_retained CGImageSourceRef)NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource;
 }
 
+// MARK: CreateImage
+static CGImageRef _Nullable NetworkImageSourceTestDoubleCreateImage(CGImageSourceRef _Nonnull, size_t, CFDictionaryRef _Nullable) CF_RETURNS_RETAINED;
+
+static id NetworkImageSourceTestDoubleCreateImageParameterImageSource = 0;
+static size_t NetworkImageSourceTestDoubleCreateImageParameterIndex = 0;
+static id NetworkImageSourceTestDoubleCreateImageParameterOptions = 0;
+static id NetworkImageSourceTestDoubleCreateImageReturnImage = 0;
+
+CGImageRef NetworkImageSourceTestDoubleCreateImage(CGImageSourceRef imageSource, size_t index, CFDictionaryRef options) {
+    NetworkImageSourceTestDoubleCreateImageParameterImageSource = (__bridge id)imageSource;
+    NetworkImageSourceTestDoubleCreateImageParameterIndex = index;
+    NetworkImageSourceTestDoubleCreateImageParameterOptions = (__bridge id)options;
+    return (__bridge_retained CGImageRef)NetworkImageSourceTestDoubleCreateImageReturnImage;
+}
+
+
+
+// MARK: Test doubles Interfaces & Implementation
 @interface NetworkImageSourceTestDouble : NetworkImageSource
 
 @end
@@ -34,6 +53,14 @@ CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, C
 
 + (CGImageSourceRef _Nullable (*_Nonnull)(CFDataRef _Nonnull, CFDictionaryRef _Nullable))createImageSource {
     return NetworkImageSourceTestDoubleCreateImageSource;
+}
+
+@end
+
+@implementation NetworkImageSourceTestDouble (CreateImage)
+
++ (CGImageRef _Nullable (*_Nonnull)(CGImageSourceRef _Nonnull, size_t, CFDictionaryRef _Nullable))createImage {
+    return NetworkImageSourceTestDoubleCreateImage;
 }
 
 @end
@@ -55,6 +82,11 @@ CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, C
     NetworkImageSourceTestDoubleCreateImageSourceParameterData = 0;
     NetworkImageSourceTestDoubleCreateImageSourceParameterOptions = 0;
     NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource = 0;
+
+    NetworkImageSourceTestDoubleCreateImageParameterImageSource = 0;
+    NetworkImageSourceTestDoubleCreateImageParameterIndex = 0;
+    NetworkImageSourceTestDoubleCreateImageParameterOptions = 0;
+    NetworkImageSourceTestDoubleCreateImageReturnImage = 0;
 }
 
 @end
@@ -93,6 +125,28 @@ CGImageSourceRef NetworkImageSourceTestDoubleCreateImageSource(CFDataRef data, C
     XCTAssert(NetworkImageSourceTestDoubleCreateImageSourceParameterOptions == options);
 
     XCTAssert(imageSource == NetworkImageSourceTestDoubleCreateImageSourceReturnImageSource);
+}
+
+@end
+
+@implementation NetworkImageSourceTestCase (CreateImageTestDouble)
+
+- (void)testCreateImageTestDouble {
+    NetworkImageSourceTestDoubleCreateImageReturnImage = [[NSObject alloc] init];
+
+    id imageSource = [[NSObject alloc] init];
+    size_t index = 1;
+    id options = [[NSObject alloc] init];
+
+    id image = (__bridge_transfer id)[NetworkImageSourceTestDouble createImageWithImageSource:(__bridge CGImageSourceRef)imageSource
+                                                                                      atIndex:index
+                                                                                      options:(__bridge CFDictionaryRef)options];
+
+    XCTAssert(NetworkImageSourceTestDoubleCreateImageParameterImageSource == imageSource);
+    XCTAssert(NetworkImageSourceTestDoubleCreateImageParameterIndex == index);
+    XCTAssert(NetworkImageSourceTestDoubleCreateImageParameterOptions == options);
+
+    XCTAssert(image == NetworkImageSourceTestDoubleCreateImageReturnImage);
 }
 
 @end
