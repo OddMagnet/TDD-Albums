@@ -17,6 +17,7 @@
 		4C6CF669273FCCC100B82A1C /* NetworkDataHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CF668273FCCC100B82A1C /* NetworkDataHandlerTests.swift */; };
 		4C6CF66C273FCE4800B82A1C /* NetworkDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */; };
 		4C6CF66D273FCF4F00B82A1C /* NetworkDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */; };
+		4C895CCD27790D01008DD4CC /* NetworkImageSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C895CCC27790D01008DD4CC /* NetworkImageSourceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		4C3EF40E2752C00000E30260 /* NetworkJSONHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkJSONHandler.swift; sourceTree = "<group>"; };
 		4C6CF668273FCCC100B82A1C /* NetworkDataHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataHandlerTests.swift; sourceTree = "<group>"; };
 		4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataHandler.swift; sourceTree = "<group>"; };
+		4C895CCC27790D01008DD4CC /* NetworkImageSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkImageSourceTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				4C0FECEC273F9CDF00A0146F /* AlbumsTests.swift */,
 				4C6CF668273FCCC100B82A1C /* NetworkDataHandlerTests.swift */,
 				4C3EF40C2752BEA000E30260 /* NetworkJSONHandlerTests.swift */,
+				4C895CCC27790D01008DD4CC /* NetworkImageSourceTests.m */,
 			);
 			path = AlbumsTests;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 					};
 					4C0FECE7273F9CDF00A0146F = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = 4C0FECD7273F9CDD00A0146F;
 					};
 				};
@@ -243,6 +247,7 @@
 			files = (
 				4C0FECED273F9CDF00A0146F /* AlbumsTests.swift in Sources */,
 				4C3EF40D2752BEA000E30260 /* NetworkJSONHandlerTests.swift in Sources */,
+				4C895CCD27790D01008DD4CC /* NetworkImageSourceTests.m in Sources */,
 				4C6CF669273FCCC100B82A1C /* NetworkDataHandlerTests.swift in Sources */,
 				4C6CF66D273FCF4F00B82A1C /* NetworkDataHandler.swift in Sources */,
 			);
@@ -438,6 +443,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K5ZJLTFVCL;
@@ -452,6 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.oddmagnet.AlbumsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Albums.app/Albums";
@@ -463,6 +470,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K5ZJLTFVCL;
