@@ -18,3 +18,11 @@
 }
 
 @end
+
+@implementation NetworkImageSource (CreateImage)
+
++ (CGImageRef _Nullable (*_Nonnull)(CGImageSourceRef _Nonnull, size_t, CFDictionaryRef _Nullable))createImage {
+    return  CGImageSourceCreateImageAtIndex;
+}
+
+@end
