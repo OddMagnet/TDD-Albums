@@ -18,6 +18,8 @@
 		4C6CF66C273FCE4800B82A1C /* NetworkDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */; };
 		4C6CF66D273FCF4F00B82A1C /* NetworkDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */; };
 		4C895CCD27790D01008DD4CC /* NetworkImageSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C895CCC27790D01008DD4CC /* NetworkImageSourceTests.m */; };
+		4C895CD127790D4A008DD4CC /* NetworkImageSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C895CD027790D4A008DD4CC /* NetworkImageSource.m */; };
+		4C895CD227790D4A008DD4CC /* NetworkImageSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C895CD027790D4A008DD4CC /* NetworkImageSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		4C6CF668273FCCC100B82A1C /* NetworkDataHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataHandlerTests.swift; sourceTree = "<group>"; };
 		4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataHandler.swift; sourceTree = "<group>"; };
 		4C895CCC27790D01008DD4CC /* NetworkImageSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkImageSourceTests.m; sourceTree = "<group>"; };
+		4C895CCE27790D49008DD4CC /* Albums-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Albums-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C895CCF27790D4A008DD4CC /* NetworkImageSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkImageSource.h; sourceTree = "<group>"; };
+		4C895CD027790D4A008DD4CC /* NetworkImageSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkImageSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,9 @@
 			children = (
 				4C6CF66B273FCE4800B82A1C /* NetworkDataHandler.swift */,
 				4C3EF40E2752C00000E30260 /* NetworkJSONHandler.swift */,
+				4C895CCE27790D49008DD4CC /* Albums-Bridging-Header.h */,
+				4C895CCF27790D4A008DD4CC /* NetworkImageSource.h */,
+				4C895CD027790D4A008DD4CC /* NetworkImageSource.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 				TargetAttributes = {
 					4C0FECD7273F9CDD00A0146F = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1320;
 					};
 					4C0FECE7273F9CDF00A0146F = {
 						CreatedOnToolsVersion = 13.1;
@@ -236,6 +245,7 @@
 			files = (
 				4C0FECDE273F9CDD00A0146F /* ContentView.swift in Sources */,
 				4C3EF40F2752C00000E30260 /* NetworkJSONHandler.swift in Sources */,
+				4C895CD127790D4A008DD4CC /* NetworkImageSource.m in Sources */,
 				4C0FECDC273F9CDD00A0146F /* AlbumsApp.swift in Sources */,
 				4C6CF66C273FCE4800B82A1C /* NetworkDataHandler.swift in Sources */,
 			);
@@ -248,6 +258,7 @@
 				4C0FECED273F9CDF00A0146F /* AlbumsTests.swift in Sources */,
 				4C3EF40D2752BEA000E30260 /* NetworkJSONHandlerTests.swift in Sources */,
 				4C895CCD27790D01008DD4CC /* NetworkImageSourceTests.m in Sources */,
+				4C895CD227790D4A008DD4CC /* NetworkImageSource.m in Sources */,
 				4C6CF669273FCCC100B82A1C /* NetworkDataHandlerTests.swift in Sources */,
 				4C6CF66D273FCF4F00B82A1C /* NetworkDataHandler.swift in Sources */,
 			);
@@ -385,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Albums/Preview Content\"";
@@ -404,6 +416,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.oddmagnet.Albums;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Albums/Network/Albums-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -414,6 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Albums/Preview Content\"";
@@ -433,6 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.oddmagnet.Albums;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Albums/Network/Albums-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -458,6 +474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.oddmagnet.AlbumsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Albums/Network/Albums-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,6 +502,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.oddmagnet.AlbumsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Albums/Network/Albums-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Albums.app/Albums";
