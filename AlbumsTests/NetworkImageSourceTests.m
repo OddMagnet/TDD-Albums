@@ -7,6 +7,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "NetworkImageSource.h"
+
 @interface NetworkImageSourceTestCase : XCTestCase
 
 @end
