@@ -17,6 +17,11 @@
     return CGImageSourceCreateWithData;
 }
 
++ (CGImageSourceRef)createImageSourceWithData:(CFDataRef)data
+                                      options:(CFDictionaryRef)options {
+    return [self createImageSource](data, options);
+}
+
 @end
 
 @implementation NetworkImageSource (CreateImage)
