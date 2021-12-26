@@ -10,3 +10,11 @@
 @implementation NetworkImageSource
 
 @end
+
+@implementation NetworkImageSource (CreateImageSource)
+
++ (CGImageSourceRef _Nullable (*_Nonnull)(CFDataRef _Nonnull, CFDictionaryRef _Nullable))createImageSource {
+    return CGImageSourceCreateWithData;
+}
+
+@end
